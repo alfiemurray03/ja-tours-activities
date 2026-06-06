@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Policy | JA Travel & Experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/portal.css">
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">JA</span><span>JA Travel &amp; Experiences<small>by JA Group Services Ltd</small></span></a><nav class="nav"><a href="/">Home</a><a href="/pricing/">Pricing</a></nav></div></header>
+  <main>
+    <section class="page-hero"><div class="container"><span class="eyebrow">Customer information</span><h1 id="policyTitle">Policy</h1><p id="policySummary">Loading the latest published wording.</p></div></section>
+    <section class="section white"><article class="container" style="max-width:860px"><div id="policyBody" style="white-space:pre-wrap"></div><p id="policyMeta" style="color:#667085;margin-top:36px"></p></article></section>
+  </main>
+  <script>
+    const slug = new URLSearchParams(location.search).get("slug");
+    const body = document.querySelector("#policyBody");
+    if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
+      body.textContent = "A valid policy was not selected.";
+    } else {
+      fetch(`/api/public/policies/${encodeURIComponent(slug)}`)
+        .then(response => response.ok ? response.json() : Promise.reject(new Error("Policy unavailable")))
+        .then(({ policy }) => {
+          document.title = `${policy.title} | JA Travel & Experiences`;
+          document.querySelector("#policyTitle").textContent = policy.title;
+          document.querySelector("#policySummary").textContent = policy.summary || "Please read the current published policy below.";
+          body.textContent = policy.body;
+          document.querySelector("#policyMeta").textContent = `Version ${policy.version} · Published ${new Date(policy.published_at || policy.updated_at).toLocaleDateString("en-GB")}`;
+        })
+        .catch(() => { body.textContent = "This policy is not currently available. Please contact hello@jagroupservices.co.uk."; });
+    }
+  </script>
+</body>
+</html>
