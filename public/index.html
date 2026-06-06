@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>JA Travel & Experiences | Coming Soon</title>
   <meta name="description" content="JA Travel & Experiences is a pre-launch travel discovery, planning, research and information platform being developed by JA Group Services Ltd.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -579,6 +582,479 @@
         min-height: 0;
       }
     }
+
+    /* JA Group product-family styling, aligned with JA Document Hub. */
+    :root {
+      --navy: #1b4e88;
+      --deep: #103963;
+      --blue: #245d9b;
+      --sky: #eef5fb;
+      --cream: #f9fafb;
+      --paper: #ffffff;
+      --text: #0a0a0a;
+      --muted: #5f6875;
+      --border: #dce3ea;
+      --shadow: 0 12px 32px rgba(15, 57, 99, 0.08);
+      --radius: 12px;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    .topbar {
+      display: none;
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 64px));
+    }
+
+    .header {
+      position: relative;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid #e7ebef;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 66px;
+    }
+
+    .brand {
+      gap: 10px;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 7px;
+      background: linear-gradient(145deg, #2865a7, #164578);
+      font-size: 16px;
+      box-shadow: none;
+    }
+
+    .brand small {
+      color: #6b7280;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .links {
+      gap: 30px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .links .cta {
+      padding: 11px 18px;
+      border-radius: 6px;
+      background: var(--navy);
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 555px;
+      display: flex;
+      align-items: center;
+      padding: 92px 0;
+      background:
+        linear-gradient(90deg, rgba(21, 71, 119, 0.96) 0%, rgba(29, 84, 142, 0.88) 52%, rgba(31, 62, 160, 0.78) 100%),
+        url("https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1800&q=82") center 43% / cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(19, 44, 111, 0.2));
+    }
+
+    .hero-grid {
+      display: block;
+    }
+
+    .hero-grid > div {
+      max-width: 760px;
+    }
+
+    .hero-panel {
+      display: none;
+    }
+
+    .eyebrow {
+      min-height: 24px;
+      margin-bottom: 20px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.38);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1,
+    .section-title h2,
+    .product-card h3 {
+      font-family: "DM Sans", Inter, sans-serif;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 24px;
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 690px;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .btn-row {
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-height: 48px;
+      align-items: center;
+      padding: 0 30px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      color: var(--navy);
+    }
+
+    .stats-strip {
+      background: #ffffff;
+      border-bottom: 1px solid #e7ebef;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 27px 22px;
+      text-align: center;
+      border-right: 1px solid #e7ebef;
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+      font-family: "DM Sans", sans-serif;
+      font-size: 25px;
+    }
+
+    .stat span {
+      color: #667085;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .services-section {
+      background: #f9fafb;
+    }
+
+    .services-intro {
+      display: block;
+      margin-bottom: 42px;
+      text-align: center;
+    }
+
+    .services-intro .section-title {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-title span {
+      color: var(--navy);
+      font-size: 12px;
+    }
+
+    .section-title h2 {
+      margin-top: 10px;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.035em;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .pricing-note {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #667085;
+    }
+
+    .product-grid {
+      gap: 18px;
+    }
+
+    .product-card,
+    .product-card.featured {
+      padding: 26px;
+      border: 1px solid #e1e7ed;
+      border-radius: 10px;
+      color: var(--text);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .product-card.featured {
+      border: 2px solid var(--navy);
+      box-shadow: 0 16px 38px rgba(27, 78, 136, 0.14);
+    }
+
+    .product-card.featured::after {
+      display: none;
+    }
+
+    .product-topline {
+      margin-bottom: 22px;
+    }
+
+    .product-number,
+    .featured .product-number {
+      color: var(--navy);
+      font-size: 11px;
+    }
+
+    .status-pill {
+      color: #245a35;
+      background: #eaf7ee;
+      font-size: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 24px;
+    }
+
+    .product-description,
+    .featured .product-description {
+      color: #667085;
+    }
+
+    .product-features,
+    .featured .product-features {
+      border-color: #e4e8ed;
+    }
+
+    .product-features li,
+    .featured .product-features li {
+      color: #344054;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .product-features li::before,
+    .featured .product-features li::before {
+      color: var(--navy);
+    }
+
+    .product-price strong {
+      color: #101828;
+      font-family: "DM Sans", sans-serif;
+      font-size: 38px;
+    }
+
+    .product-price span,
+    .featured .product-price span {
+      color: #667085;
+    }
+
+    .coming-soon-button,
+    .featured .coming-soon-button {
+      min-height: 46px;
+      border-radius: 6px;
+      color: #ffffff;
+      background: var(--navy);
+      border-color: var(--navy);
+      font-size: 14px;
+    }
+
+    .how-section {
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 44px;
+    }
+
+    .step-card {
+      padding: 14px 28px 10px;
+    }
+
+    .step-number {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 20px;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--navy);
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+    }
+
+    .step-card h3 {
+      margin: 0 0 10px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .partner-section {
+      background: var(--sky);
+    }
+
+    .panel {
+      border-radius: 10px;
+      box-shadow: none;
+    }
+
+    .panel h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 22px;
+    }
+
+    .notice {
+      border: 1px solid #c9d9e8;
+      border-left: 4px solid var(--navy);
+      border-radius: 8px;
+      color: #344054;
+      background: #f2f7fb;
+      line-height: 1.7;
+    }
+
+    .contact-section {
+      padding-top: 0;
+      background: #f9fafb;
+    }
+
+    .footer-main {
+      padding: 60px 0;
+      border-top-color: #e5e7eb;
+    }
+
+    .footer-grid {
+      gap: 38px;
+    }
+
+    .footer-col h4 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+    }
+
+    .footer-col a {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      color: #dbe5ef;
+      background: #123d69;
+    }
+
+    @media (max-width: 980px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid #e7ebef;
+      }
+
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 32px, 1200px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .brand span:last-child {
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 570px;
+        padding: 72px 0;
+        background-position: 58% center;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+    }
   </style>
 </head>
 
@@ -639,6 +1115,15 @@
         </aside>
       </div>
     </section>
+
+    <div class="stats-strip" aria-label="Service highlights">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>5</strong><span>Planning services</span></div>
+        <div class="stat"><strong>PDF</strong><span>Delivered by email</span></div>
+        <div class="stat"><strong>1</strong><span>Minor revision included</span></div>
+        <div class="stat"><strong>UK</strong><span>Customer launch focus</span></div>
+      </div>
+    </div>
 
     <section class="services-section" id="planning-services">
       <div class="wrap">
@@ -761,34 +1246,55 @@
       </div>
     </section>
 
-    <section>
+    <section class="how-section">
+      <div class="wrap">
+        <div class="section-title" style="margin:0 auto;">
+          <span>Simple and personal</span>
+          <h2>How it will work</h2>
+          <p>From your initial request to a practical planning pack in three clear steps.</p>
+        </div>
+
+        <div class="how-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>Choose your service</h3>
+            <p>Select the planning pack that best matches the support you need and tell us about your trip.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>Confirm scope and payment</h3>
+            <p>JA Group Services Ltd reviews your request and confirms the scope, final price and estimated delivery time.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>Receive your PDF</h3>
+            <p>Your researched planning pack is prepared and delivered by email, with one minor revision included.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-section">
       <div class="wrap split">
         <div class="panel">
-          <h3>How purchasing will work</h3>
+          <h3>Secure payment at launch</h3>
           <p>
-            When services open, customers will submit a short enquiry first. JA Group Services Ltd will review the
-            request and confirm the scope, final price and estimated delivery time before payment.
-          </p>
-          <p>
-            Secure Stripe payment will be introduced only after the full payment and webhook process has been
-            configured and tested.
+            When services open, secure Stripe payment will follow approval of the customer’s request, scope and
+            final price. Payment controls are not active during this pre-launch stage.
           </p>
         </div>
 
         <div class="panel">
-          <h3>Third-party partner options</h3>
+          <h3>Third-party experiences</h3>
           <p>
-            Where tours, activities, accommodation, transfers or other travel services are introduced through third-party
-            links, customers will book directly with the relevant external provider.
-          </p>
-          <p>
-            JA Group Services Ltd may receive commission where selected third-party links lead to completed bookings.
+            Selected activity and experience links may be introduced from approved third-party providers. Customers
+            will book and pay the relevant provider directly under that provider’s terms.
           </p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="contact-section">
       <div class="wrap">
         <div class="notice">
           <strong>Important pre-launch notice:</strong>
