@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (header) {
     header.innerHTML = `
-      <div class="prelaunch-bar">Pre-launch development site: public booking and direct travel support services are not yet open.</div>
+      <div class="prelaunch-bar">Pre-launch development site: JA-operated booking and direct travel support services are not yet open.</div>
       <header class="site-header">
         <div class="wrap nav">
           <a class="brand" href="/">
