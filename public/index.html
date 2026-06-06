@@ -257,6 +257,204 @@
       color: var(--muted);
     }
 
+    .services-section {
+      background: var(--paper);
+    }
+
+    .services-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 38px;
+    }
+
+    .services-intro .section-title {
+      margin-bottom: 0;
+    }
+
+    .pricing-note {
+      max-width: 340px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      grid-column: span 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 30px;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 44px rgba(16, 42, 76, 0.08);
+    }
+
+    .product-card:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    .product-card.featured {
+      color: #ffffff;
+      background: linear-gradient(145deg, var(--deep), var(--navy));
+      border-color: transparent;
+      box-shadow: 0 22px 60px rgba(7, 31, 58, 0.24);
+    }
+
+    .product-card.featured::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: rgba(212, 170, 91, 0.16);
+    }
+
+    .product-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .product-number {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .featured .product-number {
+      color: #f2cf89;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      color: #73520b;
+      background: #fff2cc;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      line-height: 1.12;
+    }
+
+    .product-description {
+      min-height: 104px;
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+
+    .featured .product-description {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .product-features {
+      display: grid;
+      gap: 10px;
+      padding: 20px 0;
+      margin: 0 0 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      list-style: none;
+    }
+
+    .featured .product-features {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .product-features li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .featured .product-features li {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .product-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 950;
+    }
+
+    .featured .product-features li::before {
+      color: #f2cf89;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      margin-top: auto;
+    }
+
+    .product-price strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .product-price span {
+      padding-bottom: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .featured .product-price span {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .coming-soon-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--navy);
+      background: var(--sky);
+      font-weight: 900;
+      cursor: not-allowed;
+    }
+
+    .featured .coming-soon-button {
+      color: var(--deep);
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -342,6 +540,19 @@
         grid-template-columns: 1fr;
       }
 
+      .services-intro {
+        display: block;
+      }
+
+      .pricing-note {
+        margin-top: 18px;
+      }
+
+      .product-card,
+      .product-card:nth-child(4) {
+        grid-column: span 3;
+      }
+
       .links {
         display: none;
       }
@@ -354,6 +565,18 @@
 
       .hero {
         padding: 70px 0;
+      }
+
+      .product-grid {
+        display: block;
+      }
+
+      .product-card {
+        margin-bottom: 18px;
+      }
+
+      .product-description {
+        min-height: 0;
       }
     }
   </style>
@@ -376,8 +599,7 @@
 
       <nav class="links">
         <a href="/">Home</a>
-        <a href="/plan-your-trip/">Plan Your Trip</a>
-        <a href="/ja-travel-support/">JA Travel Support</a>
+        <a href="#planning-services">Planning Services</a>
         <a href="/destinations/">Destinations</a>
         <a href="/activities/">Activities</a>
         <a class="cta" href="/contact/">Contact</a>
@@ -389,77 +611,151 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Pre-launch travel planning platform</div>
-          <h1>Travel planning, research and discovery — built with structure.</h1>
+          <div class="eyebrow">Personal travel planning, coming soon</div>
+          <h1>Plan smarter. Travel with more confidence.</h1>
           <p>
-            JA Travel & Experiences is being developed as a travel discovery, planning and information platform
-            by JA Group Services Ltd.
+            Practical destination research, thoughtful itinerary support and curated experience ideas,
+            prepared around the way you want to travel.
           </p>
           <p>
-            The platform is intended to help customers explore destinations, understand local transport, compare
-            accommodation areas, discover activities and experiences, build itinerary ideas and request future
-            planning support from JA.
+            Our five personal planning services are being prepared for launch. Customers will remain in control
+            of their own bookings, while JA Travel & Experiences provides the research and structure.
           </p>
           <div class="btn-row">
-            <a class="btn primary" href="/destinations/">Explore Destination Hubs</a>
-            <a class="btn" href="/ja-travel-support/">Future JA Travel Support</a>
+            <a class="btn primary" href="#planning-services">View coming-soon services</a>
+            <a class="btn" href="mailto:hello@jagroupservices.co.uk">Register your interest</a>
           </div>
         </div>
 
         <aside class="hero-panel">
-          <h2>What we are building</h2>
+          <h2>Designed around your trip</h2>
           <ul>
-            <li>Destination advice and research hubs</li>
-            <li>Itinerary planning concepts</li>
-            <li>Local transport and transfer guidance</li>
-            <li>Accommodation-area information</li>
-            <li>Activities, tours and experience discovery</li>
-            <li>Future customer account and saved trip tools</li>
+            <li>Clear, useful research without information overload</li>
+            <li>Suggestions shaped around your interests and pace</li>
+            <li>Practical arrival and local transport notes</li>
+            <li>PDF planning packs delivered directly by email</li>
+            <li>One minor revision included with each service</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section>
+    <section class="services-section" id="planning-services">
       <div class="wrap">
-        <div class="section-title">
-          <span>Platform direction</span>
-          <h2>More than affiliate links.</h2>
-          <p>
-            JA Travel & Experiences is being shaped as a structured travel support and discovery platform, not a
-            holiday booking website.
+        <div class="services-intro">
+          <div class="section-title">
+            <span>Five ways we can help</span>
+            <h2>Travel planning services</h2>
+            <p>
+              Choose focused research for one part of your trip or a fuller planning pack that brings the main
+              details together.
+            </p>
+          </div>
+          <p class="pricing-note">
+            Proposed launch prices are shown for preview and remain subject to final approval. Services are not
+            yet available to purchase.
           </p>
         </div>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Travel Advice</h3>
-            <p>Future practical guidance to help customers understand destinations, local travel, timing and planning considerations.</p>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-topline">
+              <span class="product-number">SERVICE 01</span>
+              <span class="status-pill">Coming soon</span>
+            </div>
+            <h3>Destination Research Pack</h3>
+            <p class="product-description">
+              A practical introduction to your chosen destination, helping you understand the essentials before
+              making your own travel bookings.
+            </p>
+            <ul class="product-features">
+              <li>Destination and area overview</li>
+              <li>Arrival and local transport notes</li>
+              <li>Activity and practical planning ideas</li>
+              <li>Estimated delivery: 3–5 working days</li>
+            </ul>
+            <div class="product-price"><strong>£49</strong><span>proposed price</span></div>
+            <span class="coming-soon-button" aria-disabled="true">Coming soon</span>
           </article>
 
-          <article class="card">
-            <h3>Research Support</h3>
-            <p>Destination research, accommodation-area comparisons, local transport notes and practical travel information.</p>
+          <article class="product-card">
+            <div class="product-topline">
+              <span class="product-number">SERVICE 02</span>
+              <span class="status-pill">Coming soon</span>
+            </div>
+            <h3>Mini Itinerary</h3>
+            <p class="product-description">
+              A clear one-to-three-day itinerary outline with a sensible flow, suggested activities and practical
+              travel notes.
+            </p>
+            <ul class="product-features">
+              <li>Morning, afternoon and evening ideas</li>
+              <li>Suggested route and daily flow</li>
+              <li>Local transport considerations</li>
+              <li>Estimated delivery: 3–5 working days</li>
+            </ul>
+            <div class="product-price"><strong>£59</strong><span>proposed price</span></div>
+            <span class="coming-soon-button" aria-disabled="true">Coming soon</span>
           </article>
 
-          <article class="card">
-            <h3>Itinerary Building</h3>
-            <p>Future tools and planning support to help customers organise saved ideas, activities and daily travel plans.</p>
+          <article class="product-card featured">
+            <div class="product-topline">
+              <span class="product-number">SERVICE 03</span>
+              <span class="status-pill">Coming soon</span>
+            </div>
+            <h3>Full Trip Planning Pack</h3>
+            <p class="product-description">
+              Our most complete planning service, bringing destination research, area guidance, activity ideas
+              and an itinerary outline into one useful pack.
+            </p>
+            <ul class="product-features">
+              <li>Destination and accommodation-area research</li>
+              <li>Activity shortlist and transport notes</li>
+              <li>Suggested itinerary and pre-travel checklist</li>
+              <li>Estimated delivery: 5–10 working days</li>
+            </ul>
+            <div class="product-price"><strong>£149</strong><span>proposed price</span></div>
+            <span class="coming-soon-button" aria-disabled="true">Coming soon</span>
           </article>
 
-          <article class="card">
-            <h3>Tours & Activities</h3>
-            <p>Activity and experience discovery may include third-party provider links, with bookings made directly with those providers.</p>
+          <article class="product-card">
+            <div class="product-topline">
+              <span class="product-number">SERVICE 04</span>
+              <span class="status-pill">Coming soon</span>
+            </div>
+            <h3>Activity Shortlist</h3>
+            <p class="product-description">
+              A curated shortlist of attractions, experiences and things to do, selected around your destination
+              and stated interests.
+            </p>
+            <ul class="product-features">
+              <li>Ideas grouped around your interests</li>
+              <li>General location and suitability notes</li>
+              <li>Selected third-party provider links</li>
+              <li>Estimated delivery: 2–4 working days</li>
+            </ul>
+            <div class="product-price"><strong>£39</strong><span>proposed price</span></div>
+            <span class="coming-soon-button" aria-disabled="true">Coming soon</span>
           </article>
 
-          <article class="card">
-            <h3>Transfers & Local Transport</h3>
-            <p>Guidance around airport routes, local transport, transfers and practical travel movement between places.</p>
-          </article>
-
-          <article class="card">
-            <h3>Future Customer Accounts</h3>
-            <p>Planned account features may allow customers to save destinations, activities, notes and itinerary ideas.</p>
+          <article class="product-card">
+            <div class="product-topline">
+              <span class="product-number">SERVICE 05</span>
+              <span class="status-pill">Coming soon</span>
+            </div>
+            <h3>Accommodation Area Guide</h3>
+            <p class="product-description">
+              A comparison of suitable neighbourhoods or areas, helping you decide where to look when making your
+              own accommodation booking.
+            </p>
+            <ul class="product-features">
+              <li>Area character and comparison</li>
+              <li>Transport and location considerations</li>
+              <li>Guidance based on your preferences</li>
+              <li>Estimated delivery: 3–5 working days</li>
+            </ul>
+            <div class="product-price"><strong>£49</strong><span>proposed price</span></div>
+            <span class="coming-soon-button" aria-disabled="true">Coming soon</span>
           </article>
         </div>
       </div>
@@ -468,14 +764,14 @@
     <section>
       <div class="wrap split">
         <div class="panel">
-          <h3>JA direct support</h3>
+          <h3>How purchasing will work</h3>
           <p>
-            JA Group Services Ltd may in future provide direct travel planning, research and information support
-            services, including destination research, itinerary planning, accommodation-area guidance, local transport
-            guidance and pre-travel planning support.
+            When services open, customers will submit a short enquiry first. JA Group Services Ltd will review the
+            request and confirm the scope, final price and estimated delivery time before payment.
           </p>
           <p>
-            These services are currently being scoped and are not yet open as a public purchase service.
+            Secure Stripe payment will be introduced only after the full payment and webhook process has been
+            configured and tested.
           </p>
         </div>
 
@@ -522,6 +818,9 @@
           </p>
           <p>
             <strong><a href="mailto:hello@jagroupservices.co.uk">hello@jagroupservices.co.uk</a></strong>
+          </p>
+          <p>
+            <strong><a href="tel:+442038342790">020 3834 2790</a></strong>
           </p>
         </div>
       </div>
