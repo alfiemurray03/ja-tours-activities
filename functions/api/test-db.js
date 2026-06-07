@@ -1,6 +1,6 @@
 export async function onRequestGet(context) {
   try {
-    const result = await context.env.DB.prepare(
+    const result = await context.env.CONTENT_DB.prepare(
       "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name"
     ).all();
 

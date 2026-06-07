@@ -1,6 +1,6 @@
 {
   "name": "ja-tours-activities",
-  "main": "worker.js",
+  "main": "src/worker.js",
   "compatibility_date": "2026-06-06",
 
   "assets": {
@@ -14,7 +14,7 @@
 
   "d1_databases": [
     {
-      "binding": "DB",
+      "binding": "CONTENT_DB",
       "database_name": "ja-group-services",
       "database_id": "6b06d50c-8c4f-4dcc-8f2e-46a1877d2f3b"
     }
