@@ -73,15 +73,4 @@ function renderServices(services) {
   }).join("");
 }
 
-async function loadServices() {
-  try {
-    const response = await fetch("/api/public/services", { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error("Public service data is unavailable");
-    const payload = await response.json();
-    renderServices(payload.services?.length ? payload.services : fallbackServices);
-  } catch {
-    renderServices(fallbackServices);
-  }
-}
-
-loadServices();
+renderServices(fallbackServices);
